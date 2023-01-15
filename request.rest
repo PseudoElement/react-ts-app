@@ -1,0 +1,4 @@
+GET   https://fakestoreapi.com/products
+Content-Type: application/json
+Accept: application/json
+

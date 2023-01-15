@@ -9,15 +9,18 @@ import { Counter } from "./components/Counter";
 import { CreateProduct } from "./components/CreateProduct";
 export function App() {
   const { loading, error, products } = useProducts();
-  const props = {text: 'IT"S MY PROPS'}
+  const [modal, setModal] = React.useState(true);
+  React.useEffect(()=>{
+    console.log('Change');
+  }, [products])
   return (
     <div className="App">
       {loading && <Loader />}
       {error && <Error error={error} />}
       <Counter />
-      <Modal title="Create new product">
+      {modal && <Modal title="Create new product">
         <CreateProduct />
-      </Modal>
+      </Modal>}
       {products.map((product) => {
         return <Product product={product} key={product.id} />;
       })}

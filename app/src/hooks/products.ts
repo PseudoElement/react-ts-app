@@ -9,7 +9,7 @@ export function useProducts() {
       setError("");
       setLoading((prev) => !prev);
       const response = await fetch(
-        "https://fakestoreapi.com/products?limit=10"
+        "https://fakestoreapi.com/products"
       );
       const data = await response.json();
       setProducts(data);
@@ -22,5 +22,5 @@ export function useProducts() {
   React.useEffect(() => {
     fetchProducts();
   }, []);
-  return {products, error, loading}
+  return {products, error, loading, setProducts}
 }
