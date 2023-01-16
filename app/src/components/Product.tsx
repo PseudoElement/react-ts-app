@@ -11,7 +11,7 @@ export function Product({
     title,
     price,
     category,
-    rating: { rate, count },
+    rating
   },
 }: ProductProps): JSX.Element {
   const [info, setInfo] = useState(false);
@@ -29,9 +29,9 @@ export function Product({
       {info ? (
         <>
           <h3>Category: {category}</h3>
-          <h3>
-            Rating: average - {rate}, count - {count} votes.
-          </h3>
+          {rating?.rate ? <h3>
+            Rating: average - {rating.rate}, count - {rating.count} votes.
+          </h3>: null}
           <h4>Description: {description}</h4>
         </>
       ) : null}

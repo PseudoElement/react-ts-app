@@ -1,3 +1,7 @@
+a{
+  color: black;
+  text-decoration: none;
+}
 .App .product {
   font-size: 30px;
   border: 2px solid black;
@@ -52,4 +56,22 @@ form * {
   color: red;
   background: white;
   font-style: italic;
+}
+.btn-openModal{
+  font-size: 35px;
+  background: deeppink;
+  border-radius: 20px;
+}
+.navigation{
+  display: flex;
+  width: 100%;
+  font-size: 50px;
+  border: 2px solid black;
+  justify-content: space-around;
+  margin: 20px;
+}
+.navigation a:hover{
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
 }
